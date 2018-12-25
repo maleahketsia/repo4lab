@@ -27,7 +27,7 @@ int  main() {
 		array_view<const int, 1> b(sizeq, B);
 		array_view<int, 1> s(sizeq, sum);
 		s.discard_data();
-//now it's faster
+//now it's faster (no)
 		parallel_for_each(extent < 1 >(1), [&](index < 1 > j) restrict(amp)
 		{
 			for (int j = 0; j < sizeq; ++j)
