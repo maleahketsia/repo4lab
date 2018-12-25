@@ -28,7 +28,7 @@ int  main() {
 		array_view<int, 1> s(sizeq, sum);
 		s.discard_data();
 
-		parallel_for_each(extent < 1 >(1), [=](index < 1 > j) restrict(amp)
+		parallel_for_each(extent < 1 >(1), [&](index < 1 > j) restrict(amp)
 		{
 			for (int j = 0; j < sizeq; ++j)
 				s[j] = a[j] + b[j];
